@@ -7,6 +7,8 @@ def main():
     city_lon = 37.31
     app_id = 'your app_id'
     time_delta = int(time.time()) + 432000
+    morn = 0
+    max_temp =list()
     try:
         res = requests.get("https://api.openweathermap.org/data/2.5/onecall",
                            params={'lat': city_lat, 'lon': city_lon, 'units': 'metric',
