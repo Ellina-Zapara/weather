@@ -15,9 +15,9 @@ def main():
         data = res.json()
         for i in data['daily']:
             if time_delta >= i['dt']:
-                print(time.ctime(i['dt']), f"morn: {i['temp']['morn']}", f"max: {i['temp']['max']}")
+                morn += i['temp']['morn']
+                max_temp.append(i['temp']['max'])
+        print(f'average_morn: {morn/5}')
+        print(f'average_max: {max(max_temp)}')
     except Exception as e:
         print("Exception (forecast):", e)
-
-
-main()
